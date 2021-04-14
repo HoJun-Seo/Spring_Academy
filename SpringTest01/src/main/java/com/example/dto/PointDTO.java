@@ -9,9 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PointDTO{
 	private String name;
-	private String kor;
-	private String mat;
-	private String eng;
-	private String total;
+	private int kor;
+	private int mat;
+	private int eng;
+	private int total;
 	private double avg;
 }
