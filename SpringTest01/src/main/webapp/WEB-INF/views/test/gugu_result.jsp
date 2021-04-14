@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메뉴</title>
+<title>구구단 계산 결과</title>
 </head>
 <body>
-	<a href="/">Home</a>
-	<a href="gugu.do">구구단</a>
-	<a href="point.do">성적 처리</a>
+<h2>구구단 계산 결과</h2>
+<hr>
+<h4>${result }</h4>
 </body>
 </html>
