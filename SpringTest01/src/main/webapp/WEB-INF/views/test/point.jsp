@@ -7,6 +7,7 @@
 <title>己利 贸府</title>
 </head>
 <body>
+<jsp:include page="../include/menu.jsp"></jsp:include>
 	<h2>己利 贸府</h2>
 	<hr>
 	<form action="point_result.do" method="post">

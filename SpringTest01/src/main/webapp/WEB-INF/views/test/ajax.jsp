@@ -21,11 +21,12 @@
 			$.ajax({
 				type:"post",
 				url:"ajax_background.do",
-				success:function(data){
+				success:function(dto){
 					console.log("요청 성공");
 					
-					console.log("result:" + data);
-					$('#result').html(data);
+					console.log("result:" + dto);
+					$('#result').html("<h3>상품명 : " + dto.name + ", 가격 : "
+							+ dto.price + "</h3>");
 				}
 			});
 		});
