@@ -164,9 +164,6 @@
 		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 		    <version>1.16</version>
 		</dependency>
-
-		
-		
 		
 		<!-- DB 관련 라이브러리 추가(의존성 라이브러리) -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
