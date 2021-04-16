@@ -1,20 +1,62 @@
 package com.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.example.dto.MemberDTO;
+import com.example.service.MemberService;
 
-public interface MemberDAO {
-	// 회원목록 조회 서비스
-		public List<MemberDAO> list();
-		// 회원가입 서비스
-		public void insert(MemberDTO dto);
-		// 회원정보 상세 정보 조회
-		public MemberDTO detail(String userid);
-		// 회원정보 삭제 
-		public void delete(String userid);
-		// 회원정보 수정
-		public void update(MemberDTO dto);
-		// 회원 아이디및 비밀번호 체크
-		public boolean check_passwd(String userid, String passwd);
+@Repository
+public class MemberDAO implements MemberService{
+	
+	@Inject
+	SqlSession sqlSession;
+	
+	@Override
+	public List<MemberDTO> list() {
+		return sqlSession.selectList("mysqlMember.list");
+	}
+
+	@Override
+	public void insert(MemberDTO dto) {
+		sqlSession.insert("mysqlMember.insert", dto);
+	}
+
+	@Override
+	public MemberDTO detail(String userid) {
+		return sqlSession.selectOne("mysqlMember.detail", userid);
+	}
+
+	@Override
+	public void delete(String userid) {
+		sqlSession.delete("mysqlMember.delete", userid);
+	}
+
+	@Override
+	public void update(MemberDTO dto) {
+		sqlSession.update("mysqlMember.update", dto);
+	}
+
+	@Override
+	public boolean check_passwd(String userid, String passwd) {
+		boolean result = false;
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("userid", userid);
+		map.put("passwd", passwd);
+		
+		int count = sqlSession.selectOne("mysqlMember.check_passwd", map);
+		
+		if(count == 1) {
+			result = true;
+		}
+		
+		return result;
+	}
 }
