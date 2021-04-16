@@ -27,17 +27,17 @@
 	</bean>	
 	
 	<!--  오라클 연결 방식 -->
-	<bean id="hikariConfig_oracle"  class="com.zaxxer.hikari.HikariConfig">
+	<!-- <bean id="hikariConfig_oracle"  class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@//localhost:1521/xe"/>
 		<property name="username" value="web" />
 		<property name="password" value="tiger"></property>
 	</bean>
 	
-	<!--  HikariCP configuration -->
+	 HikariCP configuration
 	<bean id="dataSource_oracle_final"  class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg ref= "hikariConfig_oracle"></constructor-arg>
-	</bean>	
+	</bean>	 -->
 
 	<!-- 자바에서 객체 생성 :  Date date = new Date() => xml에서 빈(bean)생성을 의미 -->
 	<!-- ex) db관련 클래스타입 dataSource = new 생성자()  -->
@@ -77,7 +77,7 @@
 				scr/main/resources폴더 아래에 있는 mapper폴더이름,
 				 /** : 하위에 있는 모든 폴더, 	*mapper.xml: mapper.xml으로 끝나는 파일이름을 검색 
 		-->
-		 <property name="mapperLocations" 	value="classpath*:/mapper/**/*.xml"></property>
+		 <property name="mapperLocations" 	value="classpath:/mappers/**/*.xml"></property>
 	</bean>
 	
 	<!--  SqlSession객체 주입: sql호출 할 때 SqlSession객체 생성시 여기서 설정한 객체 주입  -->
@@ -86,6 +86,6 @@
 	</bean> 
 	
 	
-	<mybatis-spring:scan base-package="com.example.mapper"/>
+	<mybatis-spring:scan base-package="com.example.mappers"/>
 	<context:component-scan base-package="com.example"></context:component-scan>
 </beans>
