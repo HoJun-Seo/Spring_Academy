@@ -10,7 +10,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.example.dao.MemberDAO;
+import com.example.dao.MemberDAOImpl;
 import com.example.dto.MemberDTO;
 
 import lombok.extern.log4j.Log4j;
@@ -21,7 +21,7 @@ import lombok.extern.log4j.Log4j;
 public class MemberServiceTest {
 
 	@Inject
-	MemberDAO testMember;
+	MemberDAOImpl testMember;
 	
 	@Test
 	public void testList() {

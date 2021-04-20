@@ -8,23 +8,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.dao.MemberDAO;
+import com.example.dao.MemberDAOImpl;
 import com.example.dto.MemberDTO;
+import com.example.service.MemberServiceImpl;
 
 @RequestMapping("/member/*")
 @Controller
 public class MemberController {
 	
 	@Inject // 객체 주입(의존성 주입)
-	MemberDAO dao;
+	MemberServiceImpl dao;
 	
 	@RequestMapping("mysql_list.do")
 	public String mysql_list(Model model) {
 		List<MemberDTO> list = dao.list();
 		model.addAttribute("list", list);
-		return "member/mysql_list";
+		return "/member/mysql_list";
 	}
 	
 	// 회원 정보 등록

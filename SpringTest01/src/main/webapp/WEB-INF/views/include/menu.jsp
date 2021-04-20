@@ -16,10 +16,10 @@
 <a href="login.do">동기 처리 방식</a>
 <hr />
 <!--  mysql * oracle 연동-->
-<a href="/member/mysql_list.do">회원관리 목록1(mysql)</a>
-<a href="/member/mysql_write.do">회원관리 등록(mysql)</a>
+<a href="member/mysql_list.do">회원관리 목록1(mysql)</a>
+<a href="member/mysql_write.do">회원관리 등록(mysql)</a>
 <hr>
-<a href="/member/oracle_list.do">회원관리 목록2(oracle)</a>
+<a href="member/oracle_list.do">회원관리 목록2(oracle)</a>
 
 </body>
 </html>
