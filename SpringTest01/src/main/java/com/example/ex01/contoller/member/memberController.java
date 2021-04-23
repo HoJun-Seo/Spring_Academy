@@ -1,16 +1,21 @@
-package com.example.ex01.contoller;
+package com.example.ex01.contoller.member;
 
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.example.ex01.model.member.dto.MemberDTO;
+import com.example.ex01.contoller.shop.ProductController;
+import com.example.ex01.model.dto.MemberDTO;
 import com.example.ex01.service.member.MemberService;
 
 
@@ -19,6 +24,8 @@ import com.example.ex01.service.member.MemberService;
 @RequestMapping("/member/*")
 @Controller
 public class memberController {
+	
+	private static  final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
 	@Inject
 	MemberService memberService;
@@ -89,6 +96,31 @@ public class memberController {
 			
 			return "member/detail";
 		}
+	}
+	
+	// 로그인 처리
+	@RequestMapping("login.do")
+	public String login() {
+		return "member/login";
+	}
+	
+	@RequestMapping("login_check.do")
+	public ModelAndView login_check(@ModelAttribute MemberDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		
+		// 로그인 체크 여부 처리
+		String name = memberService.loginCheck(dto, session);
+		logger.info("name : " + name);
+		
+		// 로그인 처리 결과에 따라 처리
+		if(mav != null) { // 로그인 성공시 session 값을 생성해서 home 페이지로 이동
+		 	mav.setViewName("home");
+		} else {
+			// 로그인 실패 시 에러 메시지와 함께 로그인 페이지로 이동
+			mav.setViewName("member/login");
+			mav.addObject("message", "error");
+		}
+		return mav;
 	}
 	
 	

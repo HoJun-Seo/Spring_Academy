@@ -58,5 +58,10 @@ public class MemberDAOImpl implements MemberDAO {
 		}
 		return result;
 	}
+	
+	// 로그인 처리
+	public String loginCheck(MemberDTO dto) {
+		return null;
+	}
 
 }
