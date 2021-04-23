@@ -23,6 +23,7 @@
 	<resources location="/WEB-INF/views/include/" mapping="/include/**" />
 	<resources location="/WEB-INF/views/images/" mapping="/images/**" />
 	<resources location="/WEB-INF/views/upload/" mapping="/upload/**" />
+	<resources location="/WEB-INF/views/shop/" mapping="/shop/**" />
 	
 	<!-- 파일 업로드 필요한 bean 설정 : class 경로 주의해야함 -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
