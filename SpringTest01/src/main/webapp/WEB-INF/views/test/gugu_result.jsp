@@ -7,6 +7,7 @@
 <title>구구단 계산 결과</title>
 </head>
 <body>
+<%--  include 적용 --%>
 <jsp:include page="../include/menu.jsp"></jsp:include>
 <h2>구구단 계산 결과</h2>
 <hr>

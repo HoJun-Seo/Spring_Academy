@@ -1,16 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!-- ÅÂ±× ¶óÀÌºê·¯¸® ¼±¾ð -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	buffer="none"
+    pageEncoding="UTF-8"%>
 
-<!-- ÄÁÅØ½ºÆ® ÆÐ½º(°æ·Î) º¯¼ö·Î ¼±¾ð -->
-<c:set var="path" value="${pageContext.request.ContextPath}" />
-<!-- jQuery ¶óÀÌºê·¯¸® ¿¬°á -->
-<script type="text/javascript" src="../resources/js/jquery.min.js" ></script>
-<script type="text/javascript">
-	alert('jQuery Ok..');
-</script>
-
-<!-- ½ºÅ¸ÀÏ ½ÃÆ® ¿¬°á -->
-<link rel="stylesheet" href="${path}/"/>
+    <!-- íƒœê·¸ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì„ ì–¸ -->
+    <%@taglib prefix="c" 		uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="fmt" 	uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <!-- ì»¨í…ìŠ¤íŠ¸ íŒ¨ìŠ¤(ê²½ë¡œ) ë³€ìˆ˜ë¡œ ì„ ì–¸ -->
+    <c:set var="path" value="${pageContext.request.contextPath }" />
+    <!-- jQuery ë¼ì´ë¸ŒëŸ¬ë¦¬ ì—°ê²°  -->
+    <script src="/include/jquery-3.6.0.min.js"></script>
+    <!-- ìŠ¤íƒ€ì¼ ì‹œíŠ¸ ì—°ê²° -->
+    <link rel="stylesheet" href="/include/style.css" />

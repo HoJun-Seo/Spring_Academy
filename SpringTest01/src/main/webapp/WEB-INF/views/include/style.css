@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+a { text-decoration: none; outline: none;}
+a:link { color: blue;}
+a:hover { text-decoration: underline; color: red;}
+a:active {color: yellow;}

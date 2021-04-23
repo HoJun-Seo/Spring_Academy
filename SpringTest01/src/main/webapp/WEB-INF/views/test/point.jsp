@@ -1,21 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>己利 贸府</title>
+<meta charset="UTF-8">
+<title>靹膘爜 觳橂Μ</title>
 </head>
 <body>
 <jsp:include page="../include/menu.jsp"></jsp:include>
-	<h2>己利 贸府</h2>
-	<hr>
-	<form action="point_result.do" method="post">
-		捞抚 : <input type="text" name="name"> <br>
-		惫绢 : <input type="text" name="kor"> <br>
-		康绢 : <input type="text" name="eng"> <br>
-		荐切 : <input type="text" name="mat"> <br>
-		<input type="submit" value="犬牢">
-	</form> 
+<h2>靹膘爜 觳橂Μ</h2>
+<hr>
+<form action="point_result.do" method="post">
+
+	鞚措: <input type="text" name="name"><br> 
+	甑柎: <input type="text" name="kor"><br>
+	鞓侅柎: <input type="text" name="eng"><br>
+	靾橅暀: <input type="text" name="mat"><br>
+	<input type="submit" value="頇曥澑"><br>
+	
+</form>
 </body>
 </html>

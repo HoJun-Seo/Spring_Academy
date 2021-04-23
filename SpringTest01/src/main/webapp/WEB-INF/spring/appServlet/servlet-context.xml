@@ -12,31 +12,32 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
+	<!-- 웹페이지 리소스 맵핑 (스프링에 리소스 폴더및 파일을 등록)-->
 	<!-- 
-		html : 자동인식, *.jsp : jspServlet 으로 처리
-		기타(html, jsp 제외한 나머지는 리소스로 취급) -> DefaultServlet 처리 -> DispatcherServlet 담당(web.xml)
-		style.css 는 리소스 취급해서 servlet-context.xml 에서 설정
-		리소스 등록하지 않을 경우 : "No mapping for Get /ex01/include/style.css" 메세지가 표시됨	
+		*.html : 자동인식, *.jsp : jspServlet으로 처리
+		기타(html, jsp제외한 나머지는 리소스로 취급) -> DefaultServlet처리 -> DispatcherServlet담당(web.xml)
+		style.css는 리소스 취급해서 servlet-context.xml에서 설정
+		리소스 등록하지않을 경우 : "No mapping for Get /ex01/include/style.css"메세지가 표시됨.
 	 -->
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!--  주의 : mapping="가상경로" => url요청일 경우에만 적용되는 가상경로 , 파일 인크루드 해당 안됨. -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources location="/WEB-INF/views/include/" mapping="/include/**" />
-	<resources location="/WEB-INF/views/images/" mapping="/images/**" />
-	<resources location="/WEB-INF/views/upload/" mapping="/upload/**" />
-	<resources location="/WEB-INF/views/shop/" mapping="/shop/**" />
+	<resources location="/WEB-INF/views/include/" 		mapping="/include/**" />
+	<resources location="/WEB-INF/views/images/" 		mapping="/images/**" />
+	<resources location="/WEB-INF/views/upload/" 			mapping="/upload/**" />
 	
-	<!-- 파일 업로드 필요한 bean 설정 : class 경로 주의해야함 -->
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- 파일 업로드 용량 설정 -->
+	<!-- 파일 업로드 필요한 bean설정 : class경로 주의해야함. -->
+	<beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 파일 업로드 용량 설정 : 10MB * 1024KB * 1024byte-->
 		<beans:property name="maxUploadSize" value="10485760" />
-		<!-- 한글 인코딩 -->
+		<!--  한글 인코딩  -->
 		<beans:property name="defaultEncoding" value="utf-8" />
 	</beans:bean>
-	
-	<!--  파일 업로드 폴더 설정
+	<!-- 파일 업로드 폴더 설정 : String upLoadPath = "d:/upload_test/" -->
 	<beans:bean id="upLoadPath" class="java.lang.String">
 		<beans:constructor-arg value="d:/upload_test/" />
-	</beans:bean>  -->
+	</beans:bean>
+	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -44,7 +45,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.example.controller" />
+	
+	<!-- 패키지 이름 지정하면 애플리케이션 실행 시 해당 패키지에서 애너테이션으로 지정된 클래스를 빈으로 생성 시켜줌  -->
+	<context:component-scan base-package="com.example.ex01" />
 	
 	
 	

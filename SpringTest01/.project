@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>SpringTest01</name>
+	<name>spring01</name>
 	<comment></comment>
 	<projects>
-		<project>Servers</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

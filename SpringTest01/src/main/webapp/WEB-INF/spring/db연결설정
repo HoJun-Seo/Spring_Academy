@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+		
+
+	<!-- 자바에서 객체 생성 :  Date date = new Date() => xml에서 빈(bean)생성을 의미 -->
+	<!-- ex) db관련 클래스타입 dataSource = new 생성자()  -->
+	
+	<!--  MySQL dataSource : mysql연동, serverTimezone-UTC 속성 필수 : 없으면 에러 발생 -->
+	<!--  1. 형식 : db 커텍션 풀 사용하지 않을 경우 작성 방법 -->
+	<!-- DriverManageDataSource dataSource = new DriverManageDataSource(초기화); -->
+	<!-- db 빈 생성 형식  
+	<bean id="dataSource"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver 또는 db제조사 드라이브" />
+		<property name="url" value="jdbc:mysql://데이터베이스 주소: 포토번호/스키마이름?useSSL=false&amp;serverTimezone=UTC" />
+		<property name="username" value="mysql계정 or 제조사db 계정"/>
+		<property name="password" value="비번"></property>
+	</bean> 
+	-->
+	<bean id="dataSource"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	
+		<!-- 방법1.  log4jdbc라이브러리 사용하지 않을 경우 
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/web?useSSL=false&amp;serverTimezone=UTC"/>
+		-->
+		
+		<!--  방법2. log4jdbc라이브러리 사용할 경우 -->
+		<!--  주의 : src/main/resources/폴더에 log4jdbc.log4j2.properties 파일이 있어야 함. 내용은 사이트 참조 -->
+		
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/web?useSSL=false&amp;serverTimezone=UTC"/>
+		<property name="username" value="web" />
+		<property name="password" value="1234"></property>
+	</bean>
+	
+	<!-- 방법3. mysql - HicariCP 컨텍션 풀 및 log4jdbc라이브러리 사용할 경우 -->
+	<!--  주의 : 
+		src/main/resources/폴더에 log4jdbc.log4j2.properties 파일이 있어야 함.
+		매개변수이름은 "url"이 아니고 "jdbcUrl"형식으로 작성 
+		내용은 사이트 참조  -->
+	
+	<bean id="hikariConfig_mysql"  class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/web?useSSL=false&amp;serverTimezone=UTC"/>
+		<property name="username" value="web" />
+		<property name="password" value="1234"></property>
+	</bean>
+	
+	<!--  HikariCP configuration -->
+	<bean id="dataSource_mysql_final"  class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<constructor-arg ref="hikariConfig_mysql"></constructor-arg>
+	</bean>	
+	
+	<!--  오라클 연결 방식 -->
+	<bean id="hikariConfig_oracle"  class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="web" />
+		<property name="password" value="1234"></property>
+	</bean>
+	
+	<!--  HikariCP configuration -->
+	<bean id="dataSource_oracle_final"  class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<constructor-arg ref= "hikariConfig_oracle"></constructor-arg>
+	</bean>		
+	
+	
+	
+	<!-- MyBatis 관련 설정은 데이터베이스 공용으로 사용 : datasource는 ref="데이터소스id" 설정에 따라 결정됨. -->
+	<!-- mybatis SqlSessionFactoryBean 객체 주입 : ref값은 id값을 지칭 -->
+	<bean id="sqlSessionFactory" 				class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- mysql dataSource 연결 
+		<property name="dataSource"  			ref="dataSource_mysql_final"></property>  -->
+		<!-- oralce dataSource 연결 -->
+		<property name="dataSource"  			ref="dataSource_oracle_final"></property>
+		<property name="configLocation" 		value="classpath:/mybatis-config.xml"></property>
+		<property name="mapperLocations" 	value="classpath:/mappers/**/*.xml"></property>
+	</bean>
+	
+	<!--  SqlSession객체 주입: sql호출 할 때 SqlSession객체 생성시 여기서 설정한 객체 주입  -->
+	<!-- -->
+	<bean 	id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean> 
+	
+	<!-- -->
+	<mybatis-spring:scan base-package="com.example.ex01.mappers"/>
+	<context:component-scan base-package="com.example.ex01"></context:component-scan> 
+	
+</beans>
+
+		
+<!-- 
+	1. xml방식 : 
+		src/main/resources폴더 아래에 mybatis-config.xml지칭(작성), 
+		classpath: src/main/resources을 의미 
+
+		scr/main/resources폴더 아래에 있는 mapper폴더이름,
+		 /** : 하위에 있는 모든 폴더, 	*mapper.xml: mapper.xml으로 끝나는 파일이름을 검색 
+-->

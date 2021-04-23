@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  네임스페이스 : annotation형식을 작성한 mapper와 혼영하여 사용할 경우
+		anotation이 있는 mapper클래스와 동일한 페키지이름으로 네임스페이스 사용해야 하며, xml파일위치도 동일 해야함.
+		ex) com.example.ex01.mappers.annotationMapperTest 클래스와 동일함.
+ -->
+<mapper namespace="com.example.ex01.mappers.annotationMapperTest">
+
+	<select id="getTime2" resultType="string">
+		select now()
+	</select>
+</mapper>

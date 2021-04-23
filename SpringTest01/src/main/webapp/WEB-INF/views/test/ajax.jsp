@@ -1,35 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>∫Òµø±‚ √≥∏Æ</title>
-<script type="text/javascript" src="resource/js/jquery.min.js"></script>
+<meta charset="UTF-8">
+<title>ÎπÑÎèôÍ∏∞ Ï≤òÎ¶¨</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<jsp:include page="../include/menu.jsp"></jsp:include>
-	
-	<h2>∫Òµø±‚ √≥∏Æ</h2>
-	<hr />
-	<div id="result"></div>
-	
-	<script type="text/javascript">
-		$(function () {
-			console.log('jQuery Ok...');
-			
-			$.ajax({
-				type:"post",
-				url:"ajax_background.do",
-				success:function(dto){
-					console.log("ø‰√ª º∫∞¯");
-					
-					console.log("result:" + dto);
-					$('#result').html("<h3>ªÛ«∞∏Ì : " + dto.name + ", ∞°∞› : "
-							+ dto.price + "</h3>");
-				}
-			});
-		});
-	</script>
+<jsp:include page="../include/menu.jsp"></jsp:include>
+
+<h2>ÎπÑÎèôÍ∏∞ Ï≤òÎ¶¨</h2>
+<hr />
+<div id="result"></div>
+
+
+
+<script>
+	$(function() {
+		console.log('jQuery Ok...');
+		
+		$.ajax({
+			type: "post",
+			url : "ajax_background.do",
+			success : function(dto) {
+				console.log("ÏöîÏ≤≠ ÏÑ±Í≥µ");
+				
+				console.log("result:"+dto);
+				$('#result').html("<h3>ÏÉÅÌíàÎ™Ö:"+dto.name+", Í∞ÄÍ≤©: "+dto.price+"</h3>");
+				
+			}
+		});// ajax();
+		
+	});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

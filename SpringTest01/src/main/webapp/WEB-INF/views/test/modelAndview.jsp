@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>¸ðµ¨_ºä °´Ã¼¸¦ È°¿ëÇÑ Àü´Þ ¹æ½Ä</title>
+<meta charset="UTF-8">
+<title>ëª¨ë¸_ë·° ê°ì²´ì„ í™œìš©í•œ ì „ë‹¬ ë°©ì‹</title>
 </head>
 <body>
-	<h2>¸ðµ¨_ºä °´Ã¼¸¦ È°¿ëÇÑ Àü´Þ ¹æ½Ä</h2>
-	<hr>
-	<%-- ÀÚ·áÀü´Þ ¹Þ´Â Çü½Ä : ¸ÊÅ° Å¬·¡½º °´Ã¼ÀÌ¸§.Å¬·¡½º ¸â¹ö º¯¼ö --%>
-	<h4>»óÇ°ÀÌ¸§ : ${map.product.name}</h4>
-	<h4>»óÇ°ÀÌ¸§ : ${map.product.price}</h4>
-	
+<h2>ëª¨ë¸_ë·° ê°ì²´ì„ í™œìš©í•œ ì „ë‹¬ ë°©ì‹</h2>
+<hr>
+<%-- ìžë£Œì „ë‹¬ ë°›ëŠ” í˜•ì‹ : ë±í‚¤.í´ëž˜ìŠ¤ê°ì²´ì´ë¦„.í´ëž˜ìŠ¤ë©¤ë³€ìˆ˜ --%>
+<h4>ìƒí’ˆì´ë¦„ : ${map.product.name }</h4>
+<h4>ìƒí’ˆì´ë¦„ : ${map.product.price }</h4>
 </body>
 </html>
