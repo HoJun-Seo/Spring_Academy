@@ -64,6 +64,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\ghwns\OneDrive\Documents\GitHub\Spring_Academy\SpringTest01"/>
+			<item value="C:\Users\ghwns\OneDrive\Documents\GitHub\Spring_Academy"/>
 			<item value="C:\Users\ghwns\OneDrive\문서\GitHub\Spring_Academy"/>
 			<item value="C:\Users\ghwns\Documents\GitHub\Spring_Academy"/>
 			<item value="C:\Users\user\Documents\GitHub\Spring_Academy"/>
