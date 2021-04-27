@@ -8,5 +8,55 @@
 		from 
 			product
 	</select>
+	<!-- 상품 조회 -->
+	<select id="detail_product" resultType="ProductDTO">
+		select *
+			from
+			product
+			where product_id = #{product_id}
+	</select>
+	
+	<!-- 상품 등록 -->
+	<insert id="insertProduct">
+		insert
+			into product
+			values(
+				seq_product.nextval,
+				#{product_name},
+				#{product_price},
+				#{product_desc},
+				#{product_url})
+	</insert>
+	
+	<!-- 상품 수정 -->
+	<update id="updateProduct">
+		update
+			product
+		set
+			product_name = #{product_name},
+			product_price = #{product_price},
+			product_desc = #{product_desc},
+			product_url = #{product_url}
+		where
+			product_id = #{product_id}
+	</update>
+	
+	<!-- 상품 삭제 -->
+	<delete id="deleteProduct">
+		delete
+			product
+		where
+			product_id = #{product_id}
+	</delete>
+	
+	<!-- 파일 이름 읽어오기 -->
+	<select id="fileinfo" resultType="String">
+		select
+			product_url
+		from
+			product
+		where
+			product_id = #{product_id}
+	</select>
 
 </mapper>

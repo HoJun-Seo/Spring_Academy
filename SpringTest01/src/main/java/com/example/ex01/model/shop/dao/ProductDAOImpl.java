@@ -21,42 +21,35 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	
 	@Inject  // or @Autowired
-	SqlSession SqlSession;
+	SqlSession sqlSession;
 
 	@Override
 	public List<ProductDTO> listProduct() {
-		return SqlSession.selectList("product.list_product");
+		return sqlSession.selectList("product.list_product");
 	}
 
 	@Override
 	public ProductDTO detailProduct(int product_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("product.detail_product", product_id);
 	}
 
 	@Override
 	public void updateProduct(ProductDTO dto) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.update("product.updateProduct", dto);
 	}
 
 	@Override
 	public void insertProduct(ProductDTO dto) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert("product.insertProduct", dto);
 	}
 
 	@Override
 	public void deleteProduct(int product_id) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete("product.deleteProduct", product_id);
 	}
 
 	@Override
 	public String fileInfo(int product_id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	}
+		return sqlSession.selectOne("product.fileinfo", product_id);
+	}	
+}
