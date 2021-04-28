@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.ex01.contoller.shop.ProductController;
 import com.example.ex01.model.dto.MemberDTO;
 import com.example.ex01.service.member.MemberService;
+import com.example.ex01.service.member.MemberServiceImpl;
 
 
 
@@ -25,10 +26,10 @@ import com.example.ex01.service.member.MemberService;
 @Controller
 public class memberController {
 	
-	private static  final Logger logger = LoggerFactory.getLogger(ProductController.class);
+	private static  final Logger logger = LoggerFactory.getLogger(memberController.class);
 	
 	@Inject
-	MemberService memberService;
+	MemberServiceImpl memberService;
 	
 	@RequestMapping("list.do")
 	public String member_list(Model model) {

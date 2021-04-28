@@ -10,16 +10,17 @@ import org.springframework.stereotype.Service;
 
 import com.example.ex01.contoller.shop.ProductController;
 import com.example.ex01.model.shop.dao.ProductDAO;
+import com.example.ex01.model.shop.dao.ProductDAOImpl;
 import com.example.ex01.model.shop.dto.ProductDTO;
 
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private static  final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+	private static  final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
 	@Inject
-	ProductDAO productDao;
+	ProductDAOImpl productDao;
 	
 	@Override
 	public List<ProductDTO> listProduct() {

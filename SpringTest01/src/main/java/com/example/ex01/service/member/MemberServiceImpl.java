@@ -9,22 +9,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.example.ex01.contoller.shop.ProductController;
-import com.example.ex01.model.dao.MemberDAO;
+import com.example.ex01.contoller.member.memberController;
+import com.example.ex01.model.dao.MemberDAOImpl;
 import com.example.ex01.model.dto.MemberDTO;
-
-;
 
 // 서비스 클래스는 @Service어노테이션이 반드시 있어야 스프링이 서브로 관리됨.
 @Service
 public class MemberServiceImpl implements MemberService {
 
-	private static  final Logger logger = LoggerFactory.getLogger(ProductController.class);
+	private static  final Logger logger = LoggerFactory.getLogger(memberController.class);
 	
 	@Inject
-	MemberDAO memberDao;
+	MemberDAOImpl memberDao;
 	// MemberDAO memberDao = new MemberDAOImpl();
-	
 	
 	@Override
 	public List<MemberDTO> list() {

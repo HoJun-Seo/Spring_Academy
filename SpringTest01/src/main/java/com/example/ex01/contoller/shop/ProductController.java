@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.ex01.model.shop.dto.ProductDTO;
 import com.example.ex01.service.shop.ProductService;
+import com.example.ex01.service.shop.ProductServiceImpl;
 
 
 // 공통된 URL 맵핑
@@ -26,7 +27,7 @@ public class ProductController {
 	
 	// 서비스 기능 요청
 	@Inject
-	ProductService productService;
+	ProductServiceImpl productService;
 
 	// 상품 전체 조회
 	@RequestMapping("list.do")

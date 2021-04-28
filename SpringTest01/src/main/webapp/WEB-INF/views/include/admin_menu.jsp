@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <a href="/">Home</a>
 <a href="/member/list.do">회원관리 목록(oracle)</a>
-<a href="/shop/product/list.do">상품목록</a>
+<a href="${pageContext.request.contextPath}/shop/product/list.do">상품목록</a>
 <a href="/upload/uploadForm">파일업로드</a>
 <a href="/member/address.do">도로명주소</a>
 

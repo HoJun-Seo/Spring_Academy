@@ -4,13 +4,17 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.example.ex01.model.shop.dao.CartDAO;
+import com.example.ex01.model.shop.dao.CartDAOImpl;
 import com.example.ex01.model.shop.dto.CartDTO;
 
+@Service
 public class CartServiceImpl implements CartService{
 
 	@Inject
-	CartDAO cartDao;
+	CartDAOImpl cartDao;
 	
 	@Override
 	public List<CartDTO> cartMoney() {

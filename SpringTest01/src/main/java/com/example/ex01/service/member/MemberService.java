@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.example.ex01.model.dto.MemberDTO;
 
 
-@Service
 public interface MemberService {
 	
 	public List<MemberDTO> list();

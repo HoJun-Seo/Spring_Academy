@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -62,6 +63,12 @@ public class MemberDAOImpl implements MemberDAO {
 	// 로그인 처리
 	public String loginCheck(MemberDTO dto) {
 		return null;
+	}
+
+	@Override
+	public void logout(HttpSession session) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

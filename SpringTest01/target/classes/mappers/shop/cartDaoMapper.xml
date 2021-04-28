@@ -13,7 +13,7 @@
 	
 	<!-- 개별 장바구니 목록 : 주의 CartDTO이 있는 user_name, price, money과 일치하기 위해
           name-> user_name, product_price-> price, (product_priceamount) -> money으로 별칭 붙였음. -->
-      <select id="listCart" resultType="com.example.spring02.model.shop.dto.CartDTO">
+      <select id="listCart" resultType="CartDTO">
           select 
               cart_id, p.product_id, c.userid, name as user_name, product_name, amount,  product_price as price , (product_priceamount) as money
         from
@@ -23,7 +23,7 @@
         order by
             cart_id
       </select>
-      <select id="listAllCart" resultType="com.example.spring02.model.shop.dto.CartDTO">
+      <select id="listAllCart" resultType="CartDTO">
           select 
               cart_id, p.product_id, c.userid, name as user_name, product_name, amount,  product_price as price , (product_priceamount) as money
         from
@@ -70,7 +70,7 @@
       </update>
 
       <!--  상품별 금액 리스트 -->
-      <select id="cartMoney"  resultType="com.example.spring02.model.shop.dto.CartDTO" >
+      <select id="cartMoney"  resultType="CartDTO" >
         select 
             product_name, sum(product_price * amount) money
         from

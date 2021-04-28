@@ -53,7 +53,7 @@ public class CartDAOImpl implements CartDAO{
 
 	@Override
 	public int sumMoney(String userid) {
-		return sqlSession.selectOne(userid);
+		return sqlSession.selectOne("cart.sumMoney", userid);
 	}
 
 	@Override
