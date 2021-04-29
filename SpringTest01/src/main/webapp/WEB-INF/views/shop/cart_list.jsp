@@ -14,6 +14,10 @@
 					location.href="${path}/shop/product/list.do";
 				});
 				
+				$('#btnUpdate').click(function(){
+					document.form1.submit();
+				});
+				
 				$('#btnDelete').click(function(){
 					if(confirm("장바구니를 비우겠습니까?")){
 						location.href="${path}/shop/cart/deleteAll.do";
@@ -26,7 +30,7 @@
  <%@ include file="../include/admin_menu.jsp" %>
  <p>
  <h2>장바구니</h2>
- 
+ <hr />
  <c:choose>
  	<c:when test="${map.count == 0 }">
  		장바구니가 비었습니다.
@@ -47,7 +51,7 @@
  					<td>${row.product_name }</td>
  					<td><fmt:formatNumber value="${row.price }"  pattern="#,###,###"/> </td>
  					<td>
- 						<input type="number" name="amount"  value="<fmt:formatNumber value="${row.amount}"  pattern="#,###,###"/>"  style="width=300px;"/>
+ 						<input type="number" name="amount"  value="<fmt:formatNumber value="${row.amount}"  pattern="#,###,###"/>"  max="100" min="1" style="width=300px;"/>
  						<input type="hidden" name="cart_id" value="${row.cart_id }" >
  					</td>
  					<td><fmt:formatNumber value="${row.money }"  pattern="#,###,###"/></td>
@@ -56,9 +60,9 @@
  				</c:forEach>
  				<tr>
  					<td colspan="5">
- 						장바구니 금액 : <fmt:formatNumber value="${map.sumMoney }"  pattern="#,###,###"/> <br>
- 						배 송 료 : <fmt:formatNumber value="${map.fee }"  pattern="#,###,###"/> <br>
- 						총 합 계 : <fmt:formatNumber value="${map.sum }"  pattern="#,###,###"/> <br>
+ 						장바구니 금액 : <fmt:formatNumber value="${map.sumMoney }"  pattern="#,###,###"/>원 <br>
+ 						배 송 료 : <fmt:formatNumber value="${map.fee }"  pattern="#,###,###"/>원 <br>
+ 						총 합 계 : <fmt:formatNumber value="${map.sum }"  pattern="#,###,###"/>원 <br>
  					</td>
  				</tr> 				
  			</table>
@@ -68,6 +72,7 @@
  	</c:otherwise>
  </c:choose>
 
+<hr />
  <button id="btnList">상폼 리스트</button>
 </body>
 </html>

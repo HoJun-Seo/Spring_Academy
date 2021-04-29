@@ -26,6 +26,9 @@
 	<resources location="/WEB-INF/views/images/" 		mapping="/images/**" />
 	<resources location="/WEB-INF/views/upload/" 			mapping="/upload/**" />
 	
+	<resources location="/WEB-INF/views/ckeditor/" mapping="/ckeditor/**"></resources>
+	<resources location="/WEB-INF/views/summernote/" mapping="/summernote/**"></resources>
+	
 	<!-- 파일 업로드 필요한 bean설정 : class경로 주의해야함. -->
 	<beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 파일 업로드 용량 설정 : 10MB * 1024KB * 1024byte-->

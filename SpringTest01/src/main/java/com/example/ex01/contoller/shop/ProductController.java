@@ -53,7 +53,11 @@ public class ProductController {
     // 상품 정보 등록(입력)
     @RequestMapping("write.do")
     public String write() {
-    	return "/shop/product_write";
+    	// 라이브러리 적용하지 않은 입력 폼
+//    	return "/shop/product_write";
+    	
+    	// ckeditor 라이브러리 적용한 입력폼
+    	return "/shop/product_write_ckeditor";
     }
     
     @RequestMapping("insert.do")
