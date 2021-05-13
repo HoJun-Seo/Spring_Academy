@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Module"/>
-    <fullyQualifiedTypeName name="java.util.Locale"/>
-    <fullyQualifiedTypeName name="com.example.webapp.model.dto.PointDTO"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="com.example.dto.PointDTO"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
     <fullyQualifiedTypeName name="com.example.dto.ProductDTO"/>
     <fullyQualifiedTypeName name="com.example.service.MemberService"/>
     <fullyQualifiedTypeName name="com.example.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.example.service.MemberServiceImpl"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
     <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.member.dto.MemberDTO"/>
@@ -21,8 +14,6 @@
     <fullyQualifiedTypeName name="com.example.ex01.service.admin.AdminService"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.admin.dao.AdminDAO"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.dao.MemberDAO"/>
-    <fullyQualifiedTypeName name="com.example.ex01.model.dto.MemberDTO"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.shop.dto.ProductDTO"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
@@ -30,20 +21,15 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
-    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
     <fullyQualifiedTypeName name="com.example.ex01.contoller.shop.CartController"/>
-    <fullyQualifiedTypeName name="javax.inject.Inject"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.shop.dao.CartDAO"/>
     <fullyQualifiedTypeName name="com.example.ex01.service.shop.CartService"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.example.ex01.model.shop.dto.CartDTO"/>
     <fullyQualifiedTypeName name="com.example.ex01.contoller.member.memberController"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
@@ -55,4 +41,23 @@
     <fullyQualifiedTypeName name="com.example.ex01.service.member.MemberServiceImpl"/>
     <fullyQualifiedTypeName name="com.example.ex01.service.shop.CartServiceImpl"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.example.ex01.contoller.rest.RestMemberController"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.example.ex01.model.dto.MemberDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="javax.inject.Inject"/>
+    <fullyQualifiedTypeName name="com.example.ex01.service.member.MemberService"/>
 </qualifiedTypeNameHistroy>

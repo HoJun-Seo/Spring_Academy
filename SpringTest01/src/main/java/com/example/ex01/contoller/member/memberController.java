@@ -124,6 +124,24 @@ public class memberController {
 		return mav;
 	}
 	
+	// 로그 아웃 처리
+		@RequestMapping("logout.do")
+		public ModelAndView logout(HttpSession session, ModelAndView mav) {
+			
+			// 로그아웃 처리하는 서비스 요청(세션값을 해제시킴)
+			memberService.logout(session);
+			
+			mav.setViewName("member/logout_check");
+			return mav;
+		}
+		
+		
+		//우편번호 검색
+		@RequestMapping("post_join.do")
+		public String address() {
+			return "/member/post_join";
+		}
+	
 	
 	
 }

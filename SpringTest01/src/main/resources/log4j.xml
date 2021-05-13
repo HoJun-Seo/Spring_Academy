@@ -10,6 +10,19 @@
 		</layout>
 	</appender>
 	
+	<!-- DailyFile Appenders를 이용해서 로그 메시지를 파일로 출력 : 설정한 기간 단위로 새파일을 만들어 로그 메시지를 기록      -->
+    <appender name="dailyFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    <!--  로그파일 생성 위치 설정 : 주의 (root에는 생성 안됨) -->
+        <param name="File" value="C:\upload_test\output2.log" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout"><!--  출력 형식 설정 -->
+          <param name="DatePattern"   value="'.'yyyy-MM-dd"/>
+            <param name="ConversionPattern"   value="[%d{HH:mm:ss}][%-5p](%F:%L)-%m%n"/>
+        </layout>
+    </appender>
+<!--  애플리케이션 전체 로그를 파일로 출력 -->
+        <appender-ref ref="dailyFileAppender" />
+	
 	<!-- Application Loggers -->
 	<logger name="com.example.ex01">
 		<level value="info" />
@@ -48,7 +61,10 @@
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
+		<!-- 애플리케이션 전체 로그를 파일로 출력 -->
+		<appender-ref ref="dailyFileAppender"/>
 	</root>	
 	
 </log4j:configuration>
+
 

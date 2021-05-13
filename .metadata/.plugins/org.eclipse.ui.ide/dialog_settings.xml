@@ -3,6 +3,8 @@
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
 		<item value="net.mihai-nita.ansicon:1.4.4.202102080044"/>
+		<item value="org.aspectj:1.9.6.202012111622"/>
+		<item value="org.eclipse.ajdt:2.2.4.202012111622"/>
 		<item value="org.eclipse.buildship:3.1.5.v20210113-0929"/>
 		<item value="org.eclipse.egit.gitflow.feature:5.11.0.202103091610-r"/>
 		<item value="org.eclipse.egit:5.11.0.202103091610-r"/>
@@ -22,7 +24,19 @@
 		<item value="org.eclipse.m2e.feature:1.17.2.20210219-1922"/>
 		<item value="org.eclipse.m2e.logback.feature:1.17.0.20200924-1339"/>
 		<item value="org.eclipse.m2e.wtp.feature:1.4.4.20201128-1705"/>
+		<item value="org.eclipse.mylyn.commons.identity:1.17.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.commons.notifications:1.17.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.commons.repositories:1.17.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.commons:3.25.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.context_feature:3.25.2.v20200828-1617"/>
+		<item value="org.eclipse.mylyn.discovery:3.25.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.ide_feature:3.25.2.v20200828-1617"/>
+		<item value="org.eclipse.mylyn.java_feature:3.25.2.v20200828-1617"/>
+		<item value="org.eclipse.mylyn.monitor:3.25.2.v20200813-0821"/>
+		<item value="org.eclipse.mylyn.tasks.ide:3.25.2.v20200814-0512"/>
+		<item value="org.eclipse.mylyn.team_feature:3.25.2.v20200828-1617"/>
 		<item value="org.eclipse.mylyn.wikitext.editors_feature:3.0.39.202102270010"/>
+		<item value="org.eclipse.mylyn_feature:3.25.2.v20200814-0512"/>
 		<item value="org.eclipse.pde:3.14.700.v20210303-1800"/>
 		<item value="org.eclipse.platform:4.19.0.v20210303-1800"/>
 		<item value="org.eclipse.rcp:4.19.0.v20210303-1800"/>
@@ -34,12 +48,27 @@
 		<item value="org.eclipse.wst.common.fproj:3.7.3.v202007142017"/>
 		<item value="org.eclipse.wst.json_ui.feature:1.1.9.v202101100033"/>
 		<item value="org.eclipse.wst.web_ui.feature:3.21.0.v202102251419"/>
+		<item value="org.eclipse.wst.xml.xpath2.processor.feature:2.0.302.v201909031400"/>
 		<item value="org.eclipse.wst.xml_ui.feature:3.21.0.v202102222242"/>
+		<item value="org.eclipse.wst.xsl.feature:1.3.900.v202005251734"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
 		<item value="org.jboss.tools.maven.apt.feature:1.5.2.201812241535"/>
 		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201207090124"/>
 		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
 		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.5.202002191804"/>
+		<item value="org.springframework.ide.eclipse.ajdt.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.aop.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.autowire.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.batch.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.boot.dash.feature:4.10.0.202103111225"/>
+		<item value="org.springframework.ide.eclipse.data.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.integration.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.maven.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.mylyn.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.security.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.webflow.feature:3.9.16.202103111701-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.xml.namespaces.feature:4.10.0.202103111225"/>
 	</list>
 	<section name="NewWizardAction">
 		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.springsource.sts.wizard.template"/>
@@ -50,9 +79,9 @@
 	</section>
 	<section name="CleanDialogSettings">
 		<item key="TOGGLE_SELECTED" value="false"/>
-		<item key="DIALOG_WIDTH" value="666"/>
-		<item key="DIALOG_HEIGHT" value="482"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="DIALOG_WIDTH" value="500"/>
+		<item key="DIALOG_HEIGHT" value="389"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="198"/>
@@ -60,10 +89,11 @@
 	</section>
 	<section name="SmartImportWizard">
 		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="true"/>
-		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\tnrdu\Documents\GitHub\Spring_Academy\SpringTest01"/>
 			<item value="C:\Users\ghwns\OneDrive\Documents\GitHub\Spring_Academy\SpringTest01"/>
 			<item value="C:\Users\ghwns\OneDrive\Documents\GitHub\Spring_Academy"/>
 			<item value="C:\Users\ghwns\OneDrive\문서\GitHub\Spring_Academy"/>
@@ -83,6 +113,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\tnrdu\Documents\GitHub\Spring_Academy\SpringTest01"/>
 			<item value="C:\Users\ghwns\OneDrive\Documents\GitHub\Spring_Academy\SpringTest01"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

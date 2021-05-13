@@ -1,10 +1,13 @@
 package com.example.ex01.model.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class MemberDTO {
 	private String userid;
 	private String passwd;
